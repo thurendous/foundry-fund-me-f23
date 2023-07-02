@@ -25,9 +25,7 @@ contract DeployFunWithStorage is Script {
 
     function printFirstArrayElement(address contractAddress) public view {
         bytes32 arrayStorageSlotLength = bytes32(uint256(2));
-        bytes32 firstElementStorageSlot = keccak256(
-            abi.encode(arrayStorageSlotLength)
-        );
+        bytes32 firstElementStorageSlot = keccak256(abi.encode(arrayStorageSlotLength));
         bytes32 value = vm.load(contractAddress, firstElementStorageSlot);
         console.log("First element in array:");
         console.logBytes32(value);

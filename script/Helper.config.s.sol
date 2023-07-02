@@ -39,18 +39,14 @@ contract HelperConfig is Script {
     function getSepoliaEthConfig() public pure returns (NetworkConfig memory) {
         // price feed address
         // vrf address, gas price, chainlink token address etc
-        NetworkConfig memory sepoliaConfig = NetworkConfig({
-            priceFeed: 0x694AA1769357215DE4FAC081bf1f309aDC325306
-        });
+        NetworkConfig memory sepoliaConfig = NetworkConfig({priceFeed: 0x694AA1769357215DE4FAC081bf1f309aDC325306});
         return sepoliaConfig;
     }
 
     function getArbitrumEthConfig() public pure returns (NetworkConfig memory) {
         // price feed address
         // vrf address, gas price, chainlink token address etc
-        NetworkConfig memory ethConfig = NetworkConfig({
-            priceFeed: 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612
-        });
+        NetworkConfig memory ethConfig = NetworkConfig({priceFeed: 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612});
         return ethConfig;
     }
 
@@ -68,9 +64,7 @@ contract HelperConfig is Script {
         vm.stopBroadcast();
 
         // 2. return the mock addresses
-        NetworkConfig memory anvilConfig = NetworkConfig({
-            priceFeed: address(mockEthUsdPriceFeed)
-        });
+        NetworkConfig memory anvilConfig = NetworkConfig({priceFeed: address(mockEthUsdPriceFeed)});
         return anvilConfig;
     }
 }
